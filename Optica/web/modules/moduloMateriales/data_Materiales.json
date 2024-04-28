@@ -1,0 +1,20 @@
+[
+{
+    "nombre":"Hierro",
+    "precioV":"1350",
+    "precioC":"1200",        
+    "estatus":"Activo"        
+},
+{
+    "nombre":"Plata",
+    "precioV":"1350",
+    "precioC":"1200",        
+    "estatus":"Activo"        
+},
+{
+    "nombre":"Plastico del qlero",
+    "precioV":"1350",
+    "precioC":"1200",        
+    "estatus":"Activo"        
+}
+]

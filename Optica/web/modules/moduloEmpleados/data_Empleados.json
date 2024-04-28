@@ -1,0 +1,78 @@
+[    
+    {
+        "nombre": "Juan Luis", 
+        "apellido_paterno": "Hernández", 
+        "apellido_materno" : "Sánchez", 
+        "genero" : "Masculino", 
+        "rfc" : "HSSJ2311977W1", 
+        "telefono" : "4770000123", 
+        "telefono_movil" : "4770001234",
+        "correo_electronico" : "juan_luis", 
+        "correo" : "@gmail.com", 
+        "numero_unico_empleado" : "HeS23062022152111",
+        "usuario" : "Juan01_Luis" ,
+        "contraseña" : "root1",
+       "estatus": "Activo"
+    },
+    {
+        "nombre": "María del Rocío", 
+        "apellido_paterno": "Pérez", 
+        "apellido_materno" : "Ramírez", 
+        "genero" : "Femenino", 
+        "rfc" : "PERM1902866D0", 
+        "telefono" : "4777882333", 
+        "telefono_movil" : "4774456652",
+        "correo_electronico" : "ricio_maria", 
+        "correo" : "@gmail.com", 
+        "numero_unico_empleado" : "PéR26062022101534",
+        "usuario" : "Roci_09",
+        "contraseña" : "root2",
+        "estatus": "Activo"
+    },
+    {
+        "nombre": "Yajaira Galilea", 
+        "apellido_paterno": "Hernandez", 
+        "apellido_materno" : "Juarez", 
+        "genero" : "Femenino", 
+        "rfc" : "HEJY081099MT9", 
+        "telefono" : "----------", 
+        "telefono_movil" : "4777658735",
+        "correo_electronico" : "galihdz", 
+        "correo" : "@gmail.com", 
+        "numero_unico_empleado" : "HeJ1108202213255",
+        "usuario" : "GaliHdz1",
+        "contraseña" : "root3",
+         "estatus": "Activo"
+    },
+    {
+        "nombre": "Juan Gabriel", 
+        "apellido_paterno": "Reyna", 
+        "apellido_materno" : " ", 
+        "genero" : "Masculino", 
+        "rfc" : "REMJ310179HGT0", 
+        "telefono" : "4773221456", 
+        "telefono_movil" : "4775032234",
+        "correo_electronico" : "jhoan_gabriel", 
+        "correo" : "@gmail.com", 
+        "numero_unico_empleado" : "ReX28072022134515",
+        "usuario" : "05Gabriel",
+        "contraseña" : "root4",
+         "estatus": "Activo"
+    },
+    {
+        "nombre": "Brenda Esmeralda", 
+        "apellido_paterno": "Gutiérrez", 
+        "apellido_materno" : "Perez", 
+        "genero" : "Femenino", 
+        "rfc" : "GUPB010589MGT9", 
+        "telefono" : "4776578909", 
+        "telefono_movil" : "4777658735",
+        "correo_electronico" : "es.bren22", 
+        "correo" : "@gmail.com", 
+        "numero_unico_empleado" : "GuP2907202116005",
+        "usuario" : "Esmex10",
+        "contraseña" : "root5",
+         "estatus": "Activo"
+    }
+
+]

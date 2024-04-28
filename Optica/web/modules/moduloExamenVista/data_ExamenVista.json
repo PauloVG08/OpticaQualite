@@ -1,0 +1,62 @@
+[
+{
+    "claveCliente":"HeS10072022",
+    "fecha":"1234",
+    "hora":"02:24:05",
+    "esferaD":"124",
+    "esferaI":"124",
+    "distanciaInterpupilar":"1234",
+    "cilindroD":"4",
+    "cilindroI":"2134",
+    "ejeD":"1234",
+    "ejeI":"2134"
+},
+{
+    "claveCliente":"GoO03082022",
+    "fecha":"1234",
+    "hora":"03:20:55",
+    "esferaD":"124",
+    "esferaI":"124",
+    "distanciaInterpupilar":"1234",
+    "cilindroD":"4",
+    "cilindroI":"2134",
+    "ejeD":"1234",
+    "ejeI":"2134"
+},
+{
+    "claveCliente":"HeA11092022",
+    "fecha":"1234",
+    "hora":"02:23:00",
+    "esferaD":"124",
+    "esferaI":"124",
+    "distanciaInterpupilar":"1234",
+    "cilindroD":"4",
+    "cilindroI":"2134",
+    "ejeD":"1234",
+    "ejeI":"2134"
+},
+{
+    "claveCliente":"AlX17102022",
+    "fecha":"1234",
+    "hora":"12:30:05",
+    "esferaD":"124",
+    "esferaI":"124",
+    "distanciaInterpupilar":"1234",
+    "cilindroD":"4",
+    "cilindroI":"2134",
+    "ejeD":"1234",
+    "ejeI":"2134"
+},
+{
+    "claveCliente":"JuX20112022",
+    "fecha":"1234",
+    "hora":"18:40:15",
+    "esferaD":"124",
+    "esferaI":"124",
+    "distanciaInterpupilar":"1234",
+    "cilindroD":"4",
+    "cilindroI":"2134",
+    "ejeD":"1234",
+    "ejeI":"2134"
+}
+]

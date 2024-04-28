@@ -1,0 +1,61 @@
+<!-- Modulo de Materiales -->
+<div class="container-fluid row d-flex justify-content-md-center" style="margin-top: 50px">
+    <div class="card col-lg-5 m-4 p-4">
+        <h2 class="text-center">Gestión de Materiales</h2>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="txtNombreMaterial" class="mt-2">Nombre:</label><br>
+                <input id="txtNombreMaterial" type="text"  class="mt-2">
+            </div>
+            <div class="col-md-6">
+                <label for="txtPrecioV" class="mt-2">Precio venta: </label>
+                <input id="txtPrecioV" type="text"  class="mt-2" placeholder="ej. $20">
+            </div>
+            <div class="col-md-6">
+                <label for="txtPrecioC" class="mt-2">Precio compra: </label>
+                <input id="txtPrecioC" type="text"  class="mt-2" placeholder="ej. $40">
+            </div>
+            
+        </div>
+
+        <div class="d-flex justify-content-around mt-2">
+            <button class="mt-2 btn btn-success btn-lg" onclick="moduloMateriales.addMaterial();" id="btnAdd" style="background: #011866"><i class="fa-solid fa-floppy-disk" style="color: white;"></i></button>
+           
+            <button class="mt-2 btn btn-warning btn-lg disabled" onclick="moduloMateriales.updateMaterial();" id="btnUpdate" style="background: #011866"><i class="fa-solid fa-arrow-rotate-right" style="color: white;"></i></button>
+            <button class="mt-2 btn btn-danger btn-lg disabled" onclick="moduloMateriales.deleteMaterial();" id="btnDelete" style="background: #011866"><i class="fa-solid fa-trash-can" style="color: white;"></i></button>
+        </div>
+    </div>
+
+    <div class="card col-lg-6  p-4 m-4" style="margin-bottom: 10px">
+        <div class="d-flex m-3">
+            <label for="txtBusquedaMaterial" class="form-label mx-3">Buscar material: </label>
+            <input type="text" id="txtBusquedaMaterial">
+
+            <button class="btn btn-primary mx-2" onclick="moduloMateriales.searchMaterial();" style="background: #011866"><i class="fa-solid fa-magnifying-glass" style="color: white;"></i></button>
+            <select name="esta" id="esta" onclick="moduloMateriales.cargartabla();">
+                <option value="1">Activo</option>
+                <option value="0">Inactivo</option>
+            </select>
+
+            <div style="padding-left: 130px;">
+                <button class="btn mx-2" onclick="moduloMateriales.imprimir('tabla')" style="background: #011866"><i class="fa-solid fa-print" style="color: white;"></i></button>
+            </div>
+        </div>
+
+        <div id="tabla">
+        <table class="table table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio de venta</th>
+                    <th>Precio de compra</th>
+                    <th>Estatus</th>
+                </tr>
+            </thead>
+            <tbody id="tblMateriales">
+
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+<!-- Modulo de compras -->
+<div class="container-fluid row d-flex justify-content-md-center" style="margin-top: 50px">
+    
+    <div class="card col-lg-4 m-4 p-4">
+        <h2 class="text-center">Bitacora Compras</h2>
+        <form class="needs-validation">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="txtNumUnico" class="mt-2 ">Clave unica</label>
+                <input id="txtNumUnico" class="form-control" type="text"  readonly class="mt-2">
+            </div>
+            <div class="col-md-6">
+                <label for="txtProducto" class="mt-2 ">Producto</label>
+                <input id="txtProducto" type="text" class="mt-2 form-control" required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="txtAdmi" class="mt-2">Clave del administrador:</label>
+                <input id="txtAdmi" type="text"  class="mt-2 form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label for="txtPrecom" class="mt-2">Precio de la compra:</label>
+                <input id="txtPrecom" type="number" class="mt-2 form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label for="txtCantidad" class="mt-2">Cantidad:</label>
+                <input id="txtCantidad" type="number"  class="mt-2 form-control" required>
+            </div>
+            
+        </div>
+
+        <div class="d-flex justify-content-around mt-2">
+            <button class="mt-2 btn btn-lg" onclick="moduloCompra.addAccesorio();" id="btnAdd" style="background: #011866"><img src="resources/g.png" style="height: 25px; width: 25px;" alt=""/></button>
+                
+                <button class="mt-2 btn btn-lg disabled" onclick="moduloCompra.updateAccesorio();" id="btnUpdate" style="background: #011866"><img src="resources/a.png" style="height: 25px; width: 25px;" alt=""/></button>
+                <button class="mt-2 btn btn-lg disabled" onclick="moduloCompra.deleteAccesorio();" id="btnDelete" style="background: #011866"><img src="resources/d.png" style="height: 25px; width: 25px;" alt=""/></button>
+        </div>
+        </form>
+    </div>
+
+    <div class="card col-lg-7  p-1 m-4" style="margin-bottom: 10px">
+        <div class="d-flex m-3">
+            <label for="txtBusquedaCompra" class="form-label mx-3">Buscar Compra: </label>
+            <input type="text" id="txtBusquedaCompra">
+            <button class="btn mx-2" onclick="moduloCompra.searchAccesorio();" style="background: #011866"><img src="resources/b.png" style="height: 25px; width: 25px;" alt=""/></button>
+            <select name="esta" id="esta" onclick="moduloCompra.cargartabla();">
+                <option value="1">Activo</option>
+                <option value="0">Inactivo</option>
+            </select>
+            <div style="padding-left: 110px;">
+                <button class="btn mx-2" onclick="moduloCompra.imprimir('tabla')" style="background: #011866;"><img src="resources/i.png" style="height: 25px; width: 30px;" alt=""/></button>
+            </div>
+        </div>
+        <div id="tabla">
+        <table class="table table-hover">
+            <thead class="table-dark" id="tb2">
+                <tr>
+                    <th>Clave</th>
+                    <th>Producto</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Administrador</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Estatus</th>
+                </tr>
+            </thead>
+            <tbody id="tblCompras">
+
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>

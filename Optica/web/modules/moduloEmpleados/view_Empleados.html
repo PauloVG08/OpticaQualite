@@ -1,0 +1,185 @@
+<!-- Modulo de empleados -->
+<div class="container-fluid row d-flex justify-content-md-center" style="margin-top: 10px">
+    <div class="accordion" id="acordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button id="btnAccordion" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Añadir empleado
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-expanded="false" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="card col-lg-12 m-2 p-4">
+                        <h2 class="text-center">Gestión de Empleados</h2>
+
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                            </div>
+                            <div class="col-md-4 form-floating">
+                                <input id="txtNumUnico" type="text" class="form-control mt-2" readonly>
+                                <label for="txtNumUnico" class="mt-2 ">Número unico del Empleado</label>
+                            </div>
+                            <div class="col-md-4 form-floating d-none">
+                                <input id="txtCodigoPersona" type="text" class="form-control mt-2" readonly>
+                                <label for="txtCodigoPersona" class="mt-2 ">Id persona</label>
+                            </div>
+                            <div class="col-md-4 form-floating d-none">
+                                <input id="txtCodigoEmpleado" type="text" class="form-control mt-2" readonly>
+                                <label for="txtCodigoEmpleado" class="mt-2 ">Id empleado</label>
+                            </div>
+                            <div class="col-md-4 form-floating d-none">
+                                <input id="txtCodigoUsuario" type="text" class="form-control mt-2" readonly>
+                                <label for="txtCodigoUsuario" class="mt-2 ">Id usuario</label>
+                            </div>
+
+
+                            <div style="background: #BBDEFB" class="row g-3 p-2"> 
+                                <div class="col-md-4">
+                                    <label for="txtNombre" class="mt-2">Nombre(s): <sup style="color: red">*</sup></label><br>
+                                    <input id="txtNombre" type="text"  class="mt-2 form-control" placeholder="ej. Adrian" pattern="[a-z]{1,15}" 
+                                           onkeydown="moduloEmpleado.soloLetras(event);"   title="El formato debe coincidir con letras de la A a la Z" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="txtApePaterno" class="mt-2">Apellido Paterno: <sup style="color: red">*</sup></label>
+                                    <input id="txtApePaterno" type="text"  class="mt-2 form-control" onkeydown="moduloEmpleado.soloLetras(event);" placeholder="ej. Flores" pattern="^[A-Za-z]+$"
+                                           title="El formato debe coincidir con letras de la A a la Z" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="txtApeMaterno" class="mt-2">Apellido Materno:</label>
+                                    <input id="txtApeMaterno" type="text"  class="mt-2 form-control" onkeydown="moduloEmpleado.soloLetras(event);" placeholder="ej. Guerrero" pattern="^[A-Za-z]+$"
+                                           title="El formato debe coincidir con letras de la A a la Z">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="mt-2" for="cmbGenero">Género: <sup style="color: red">*</sup></label><label></label>
+                                    <select class="form-control mt-2" id="cmbGenero" name="txtGenero">
+                                        <option selected value="M" >Masculino</option>
+                                        <option value="F">Femenino</option>
+                                        <option value="O">Otro</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="dpFechaNacimiento" class="mt-2">Fecha de nacimiento <sup style="color: red">*</sup></label> <br>
+                                    <input id="dpFechaNacimiento" type="text" onkeypress="moduloEmpleado.soloNumerosDiagonales(event);"
+                                           class="mt-2 form-control" placeholder="ej. 08/10/2002" maxlength="10">
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="txtRfc" class="mt-2 col-12">RFC:<sup style="color: red">*</sup></label><br>
+                                    <input type="text" id="txtRfc" class="mt-2 form-control" style="text-transform: uppercase;" placeholder="ej. MAMC00733V5DJ" 
+                                           required pattern="[A-Z0-9]+" maxlength="13" onkeydown="moduloEmpleado.soloNumerosYLetras(event);" 
+                                           title="El formato debe coincidir con letras de la A a la Z y numeros de el 0 al 9 (13 caracteres)">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="txtTelefono" class="mt-2">Teléfono Fijo:</label><br>
+                                    <input id="txtTelefono" type="text" class="mt-2 form-control" placeholder="ej. 477 876 4567"
+                                           onkeydown="moduloEmpleado.soloNumeros(event);" minlength="10" maxlength="10" title="Solo puedes ingresar números">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="txtMovil" class="mt-2">Telefono Movil: <sup style="color: red">*</sup></label><br>
+                                    <input id="txtMovil" type="text"  class="mt-2 form-control" placeholder="ej. 477 098 4569"
+                                           onkeydown="moduloEmpleado.soloNumeros(event);" minlength="10" maxlength="10" title="El movil solo puede contener numeros">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="txtCorreo" class="mt-2 col-12">Correo <sup style="color: red">*</sup></label><br>
+                                    <input id="txtCorreo" type="email"  class="mt-2 form-control" placeholder="ej. bluebool@gmail.com"
+                                           title="El correo puede contener letras de la A a la Z y numeros">
+                                </div>
+                            </div>
+
+
+                            <div class="row g-3 p-2" style="background: #C5CAE9">
+                                <div class="col-md-4">
+                                    <label for="txtCalle" class="mt-2">Calle: <sup style="color: red">*</sup></label> <br>
+                                    <input id="txtCalle" type="text"  class="mt-2 form-control" placeholder="ej. Los naranjos">
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="txtNumero" class="mt-2">Numero: <sup style="color: red">*</sup></label> <br>
+                                    <input id="txtNumero" type="text" onkeypress="moduloEmpleado.soloEspeciales(event)"  minlength="10" maxlength="10"
+                                           class="mt-2 form-control" placeholder="ej. 106" style="text-transform: uppercase;">
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="txtColonia" class="mt-2">Colonia: <sup style="color: red">*</sup></label> <br>
+                                    <input id="txtColonia" type="text" onkeydown="moduloEmpleado.soloNumerosYLetras(event);" class="mt-2 form-control" placeholder="ej. Echeveste">
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="txtCodigoPostal" class="mt-2">Código Postal: <sup style="color: red">*</sup></label> <br>
+                                    <input id="txtCodigoPostal" onkeydown="moduloEmpleado.soloNumeros(event);" minlength="5" maxlength="5" type="text"  class="mt-2 form-control" placeholder="ej. 37555">
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="txtCiudad" class="mt-2">Ciudad: <sup style="color: red">*</sup></label> <br>
+                                    <input id="txtCiudad" type="text" onkeydown="moduloEmpleado.soloLetras(event);"  class="mt-2 form-control" placeholder="ej. León">
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="txtEstado" class="mt-2">Estado: <sup style="color: red">*</sup></label> <br>
+                                    <input id="txtEstado" type="text" onkeydown="moduloEmpleado.soloLetras(event);"  class="mt-2 form-control" placeholder="ej. Guanajuato">
+                                </div>
+                            </div>
+
+
+                            <div class="row g-3 p-2" style="background: #D1C4E9">
+                                <div class="col-md-4">
+                                    <label for="txtUsuario" class="mt-2">Usuario: <sup style="color: red">*</sup></label> <br>
+                                    <input id="txtUsuario" type="text"  class="mt-2 form-control" placeholder="ej. AdrianFG">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="txtContrasenia" class="mt-2">Contraseña: <sup style="color: red">*</sup></label> <br>
+                                    <input id="txtContrasenia" type="text"  class="mt-2 form-control" placeholder="ej. contraseña123">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="txtRol" class="mt-2">Rol: <sup style="color: red">*</sup></label> <br>
+                                    <select class="form-control mt-2" id="txtRol" name="txtRol" style="background: white;">
+                                        <option class="col-5" selected value="Empleado" >Empleado</option>
+                                        <option class="col-5" value="Administrador">Administrador</option>
+                                    </select>
+                                    <br><!-- comment -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-around mt-2">
+
+                            <button class="mt-2 btn btn-lg" onclick="moduloEmpleado.save();" id="btnAdd" style="background: #011866"><img src="resources/g.png" style="height: 25px; width: 25px;" alt=""/></button>
+
+                            <button class="mt-2 btn btn-lg" onclick="moduloEmpleado.clean();" id="btnClean" style="background: #011866"><img src="resources/a.png" style="height: 25px; width: 25px;" alt=""/></button>
+                            <button class="mt-2 btn btn-lg disabled" onclick="moduloEmpleado.askDelete();" id="btnDelete" style="background: #011866"><img src="resources/d.png" style="height: 25px; width: 25px;" alt=""/></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="divTbl" class="card col-lg-12  p-2 m-2" style="margin-bottom: 10px; overflow: auto">
+            <div class="d-flex m-3">
+                <label for="txtBusquedaEmpleado" class="form-label mx-3">Buscar Empleado: </label>
+                <input type="text" id="txtBusquedaEmpleado" placeholder="Buscar" class="form-control" style="min-width: 200px">
+                <button class="btn mx-2 disabled" style="background: #011866"><img src="resources/b.png" style="height: 25px; width: 25px;" alt=""/></button>
+                <select name="cmbFiltro" class="form-control" style="width: 200px" id="cmbFiltro" onclick="moduloEmpleado.refrescarTabla();">
+                    <option value="1">Activo</option>
+                    <option value="0">Inactivo</option>
+                </select>
+                <div style="padding-left: 310px;">
+                    <button class="btn mx-2" onclick="moduloEmpleado.imprimir('tabla')" style="background: #011866"><img src="resources/i.png" style="height: 25px; width: 30px;" alt=""/></button>
+                </div>
+            </div>
+            <div id="tabla">
+                <table class="table table-hover" id="tblEmp">
+                    <thead class="table-dark" id="tb2">
+                        <tr>
+                            <th>N° Empleado</th>
+                            <th>Nombre(s)</th>
+                            <th>Apellido(s)</th>
+                            <th>Teléfono Móvil</th>
+                            <th>Detalles</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblEmpleados">
+                    </tbody>
+                </table> 
+            </div>
+        </div>
+    </div>

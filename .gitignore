@@ -1,0 +1,16 @@
+Optica/dist/
+Optica/build/
+Optica/nbdist/
+Optica/.nb-gradle/
+
+optica_core/dist/
+optica_core/build/
+optica_core/nbdist/
+optica_core/.nb-gradle/
+
+optica_model/dist/
+optica_model/build/
+optica_model/nbdist/
+optica_model/.nb-gradle/
+
+OpticaQualite/build/

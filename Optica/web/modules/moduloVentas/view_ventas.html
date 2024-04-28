@@ -1,0 +1,64 @@
+<!-- Modulo de ventas de productos -->
+<div class="container-fluid row d-flex justify-content-md-center" style="margin-top: 10px">
+    <div class="container">
+        <div id="divTbl" class="card col-lg-12  p-1 m-2">
+            <div class="d-flex m-3">
+                <label for="txtBusqueda" class="form-label mx-3">Buscar Producto: </label>
+                <input type="text" id="txtBusqueda" placeholder="Buscar" class="form-control" style="min-width: 200px">
+                <button class="btn mx-2 disabled" style="background: #011866"><img src="resources/b.png" style="height: 25px; width: 25px;"/></button>
+                <select name="cmbFiltro" class="form-control" style="width: 200px" id="cmbFiltro" onclick="moduloVentas.refrescarTabla();">
+                    <option value="1">Activo</option>
+                    <option value="0">Inactivo</option>
+                </select>
+                <div style="padding-left: 310px;" class="">
+                    <button class="btn mx-4" onclick="moduloVentas.imprimir('tabla')" style="background: #011866"><img src="resources/i.png" style="height: 25px; width: 25px;" alt=""/></button>
+                </div>
+            </div>
+            <div class="card col-lg-12  p-1">
+                <div id="tabla">
+                    <table class="table table-hover" id="tblProd">
+                        <thead class="table-dark" id="tb2">
+                            <tr>
+                                <th>Seleccionar</th>
+                                <th>Código de barras</th>
+                                <th>Nombre</th>
+                                <th>Precio Venta</th>
+                                <th>Existencias</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tblProductos">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <h2>Carrito de compras</h2>
+            <div class="card col-lg-12  p-1" >
+                <div id="tablaCarrito">
+                    <table class="table table-hover" id="tblProdCarrito">
+                        <thead class="table-dark" id="tb2Carrito">
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Código de barras</th>
+                                <th>Precio Venta</th>
+                                <th>Descuento</th>
+                                <th>Cantidad</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tblProductosCarrito">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h3>Cantidad de productos: <span id="lblCantidad"></span></h3>
+                    <h3>El subtotales: <span id="lblSubTotal"></span></h3>
+                    <h3>El descuento: <span id="lblDescuento"></span></h3>
+                    <h3>El total: <span id="lblTotal"></span></h3>
+                </div>
+                <button class="btn btn-primary"  id="btnVenta" style="width: 150px; margin: 0 auto;" onclick="moduloVentas.ejecutarVenta()">Finalizar Venta</button>
+            </div>
+        </div>
+    </div>
+</div><br><br><br><br>

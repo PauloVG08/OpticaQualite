@@ -1,0 +1,48 @@
+[    
+    {
+        "nombre": "Lentecito", 
+        "marca": "Solunate", 
+        "descripcion" : "Azul", 
+        "precioCompra" : "834-FFF 8-FF", 
+        "precioVenta" : "38389", 
+        "existencias" :"73383",
+        "estatus" : "Activo"
+    },
+    {
+        "nombre": "Mica bonita", 
+        "marca": "Solunate", 
+        "descripcion" : "Morado", 
+        "precioCompra" : "383", 
+        "precioVenta" : "38389", 
+        "existencias" :"0",
+        "estatus" : "Activo"
+    },
+    {
+        "nombre": "Solucion salina", 
+        "marca": "OptiFresh", 
+        "descripcion" : "Liquido", 
+        "precioCompra" : "38", 
+        "precioVenta" : "50", 
+        "existencias" :"10",
+        "estatus" : "Activo"
+    },
+    {
+        "nombre": "Sprite", 
+        "marca": "BuenaVista", 
+        "descripcion" : "150ml", 
+        "precioCompra" : "60", 
+        "precioVenta" : "80", 
+        "existencias" :"100",
+        "estatus" : "Activo"
+    },
+    {
+        "nombre": "Toallitas para lentes", 
+        "marca": "Multi-Purpose", 
+        "descripcion" : "Caja con 100pz", 
+        "precioCompra" : "80", 
+        "precioVenta" : "100", 
+        "existencias" :"20",
+        "estatus" : "Activo"
+    }
+
+]

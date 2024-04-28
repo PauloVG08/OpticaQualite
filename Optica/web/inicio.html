@@ -1,0 +1,162 @@
+<!-- Paulo -->
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Qualite</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link href="js/gft/gft.css" rel="stylesheet" type="text/css"/>  
+        <link rel="shortcut icon" href="resources/logoQ.png">
+        <link href="css/estilo.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body style="background: #E3F6F3">
+        <div class="col-12">
+
+            <nav class="nav navbar navbar-expand-xl navbar-dark" style="text-align: center">
+                <div class="container-fluid">
+                    <!--Logo-->
+
+                    <img src="resources/logoQ.png" alt="Avatar Logo" id="logo" class="rounded-pill"> 
+                    <h1 style="font-size: 19px; color: rgb(159, 236, 236); font-family: arial; margin: 5px; margin-right: 25px;"> QUALITE </h1>
+
+                    <!--opciones-->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                        <span class="navbar-toggler-icon"></span>
+                        <a href="index.html" onclick="cerrarSesion();"><img src="resources/salir.png" style="height: 35px" alt=""/></a>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-between" id="mynavbar">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="inicio.html" style="font-family: arial">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" onclick="cargarModuloClientes();" style="font-family: arial">Clientes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" onclick="cargarModuloEmpleados();" style="font-family: arial">Empleados</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" onclick="cargarModuloExamenVista();">Examenes&nbspvista</a>
+                            </li> 
+                            <li class="nav-item">
+                                <a class="nav-link" style="color: rgb(112, 108, 103); font-family: arial;">Compras</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="color: rgb(112, 108, 103); font-family: arial;">Presupuesto</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white; font-family: arial;">Ventas</a>
+                                <ul class="dropdown-menu dropdown-menu-dark" style="background: #112A45">
+                                    <li><a class="dropdown-item" onclick="cargarModuloVentas();" style="font-family: arial">Ventas</a></li>
+                                    <li><a class="dropdown-item" onclick="cargarModuloVentasLentesContacto();" style="font-family: arial">Venta de lentes de contacto</a></li>
+                                    <li><a class="dropdown-item" onclick="cargarModuloVentasLentesArmazon();" style="font-family: arial">Venta de lentes con armazón</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="color: rgb(112, 108, 103); font-family: arial;">Pagos</a>
+                            </li>
+
+                            <!--                    lista despegable-->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white; font-family: arial;">Productos</a>
+                                <ul class="dropdown-menu dropdown-menu-dark" style="background: #112A45">
+                                    <li><a class="dropdown-item" onclick="cargarModuloAccesorios();" style="font-family: arial">Accesorios</a></li>
+                                    <li><a class="dropdown-item" onclick="cargarModuloArmazones();" style="font-family: arial">Armazones</a></li>
+                                    <li><a class="dropdown-item" onclick="cargarLentesContacto();" style="font-family: arial">Lentes de contacto</a></li>
+                                    <li><a class="dropdown-item" style="color: rgb(112, 108, 103); font-family: arial;">Materiales</a></li>
+                                    <li><a class="dropdown-item" onclick="cargarModuloSoluciones();" style="font-family: arial">Soluciones de limpieza</a></li>
+                                    <li><a class="dropdown-item" style="color: rgb(112, 108, 103); font-family: arial;">Tratamientos</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>  
+
+                    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2 justify-content-end">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="index.html" onclick="cerrarSesion();"><img src="resources/salir.png" style="height: 35px" alt=""/></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container-fluid" id="contenedorPrincipal"> <br>
+                <div id="myCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel" data-interval="true">
+                    <!-- Carousel indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                        <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
+                    </ol>
+                    <!-- Wrapper for carousel items -->
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item active">
+                            <center><img src="resources/pu.png" class="d-block w-100" alt="Slide 0"></center>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="resources/s .png" class="d-block w-100" alt="Slide 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="resources/l.png" class="d-block w-100" alt="Slide 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="resources/le.png" class="d-block w-100" alt="Slide 3">
+                        </div>
+                    </div>
+
+                    <!-- Carousel controls -->
+                    <a class="carousel-control-prev" href="#myCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#myCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+
+            </div> 
+            <div><br>
+                <footer class="text-center text-white" id="pie">
+
+                    <div class="container pt-3">
+
+                        <section class="mb-2">
+                            <!-- Facebook -->
+                            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button">
+                                <img src="resources/fac.png" style="width: 30px; height: 25px;" alt="">
+                            </a>
+
+                            <!-- Twitter -->
+                            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark">
+                                <img src="resources/tw.png" style="width: 30px; height: 25px;" alt=""/>
+                            </a>      
+
+                            <!-- Instagram -->
+                            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark">
+                                <img src="resources/ins.png" style="width: 30px; height: 25px;" alt=""/>
+                            </a>
+                        </section>
+                    </div>
+
+                    <div class="text-center text-white p-2" style="background-color: rgba(35, 68, 104, 0.706);">
+                        <p> Blvd. Hermenegildo Bustos 1701, Cd Aurora, 37110 León, Gto. </p><b> © 2022 Copyright: PROSSOFTEAM & BLUEBOOL</b>
+                    </div>            
+                </footer>
+            </div>
+        </div> 
+
+        <script src="js/gft/gft.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
+        <script src="js/controller_login.js"></script>     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="js/md5.js"></script>
+        <script>checkUser();</script>
+    </body>
+</html>

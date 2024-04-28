@@ -1,0 +1,137 @@
+<!-- Modulo de compras -->
+<div class="container-fluid row d-flex justify-content-md-center" style="margin-top: 10px">
+    <div class="accordion" id="acordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button id="btnAccordion" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Añadir armazón
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-expanded="false" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="card col-lg-12 m-2 p-4">
+                        <h2 class="text-center">Armazones</h2>
+                        <div class="row g-3">
+                            <!--ids-->
+                            <div class="row g-3 p-2 d-none">
+                                <div class="col-md-4 form-floating">
+                                    <input id="txtIdProducto" class="form-control mt-2" type="text" readonly>
+                                    <label for="txtIdProducto" class="mt-2 ">Id producto</label>
+                                </div>
+                                <div class="col-md-4 form-floating">
+                                    <input id="txtIdArmazon" class="form-control mt-2" type="text" readonly>
+                                    <label for="txtIdArmazon" class="mt-2 ">Id Armazón</label>
+                                </div>
+                                <div class="col-md-4 form-floating">
+                                    <input id="txtNumUnico" class="form-control mt-2" type="text" readonly>
+                                    <label for="txtNumUnico" class="mt-2 ">Código de barras</label>
+                                </div>
+                            </div>
+
+
+                            <div class="row g-3 p-2 col-md-4">
+                                <!-- foto -->
+                                <div class="col-md-5">
+                                    <div class="row mt-2">
+                                        <div class="col-12">
+                                            <img id="imgFoto" src="resources/cargarFoto.png" style="width: 257px; height: 257px;"/>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-12">
+                                            <button id="btnSelecImg" class="btn btn-outline-primary"  onclick="moduloArmazon.showInputDialog()" style="width: 256px;"><img src="resources/subir.png" alt="" style="height: 24px"/> Imagen</button>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2 d-none">
+                                        <div class="col-12">
+                                            <input id="inputFileImagenArmazon" type="file" style="width: 257px;" class="mt-2 form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 p-2 col-md-8">
+                                <!-- armazon -->
+                                <div class="col-md-4">
+                                    <label for="txtModelo" class="mt-2">Modelo: <sup style="color: red">*</sup> </label><br>
+                                    <input id="txtModelo" type="text"  class="mt-2 form-control" placeholder="ej. M01234" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="txtColor" class="mt-2">Color: <sup style="color: red">*</sup> </label>
+                                    <input id="txtColor" onkeydown="moduloArmazon.soloLetras(event);" type="text"  class="mt-2 form-control" placeholder="ej. Plateado" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="txtDes" class="mt-2">Descripción: <sup style="color: red">*</sup> </label>
+                                    <input id="txtDes" type="text" maxlength="200" class="mt-2 form-control" placeholder="ej. Redondos" required>
+                                </div>
+
+                                <!--producto-->
+                                <div class="col-md-4">
+                                    <label for="txtNombre" class="mt-2 ">Nombre: <sup style="color: red">*</sup> </label>
+                                    <input id="txtNombre" onkeydown="moduloArmazon.soloLetras(event);" type="text" class="mt-2 form-control" placeholder="ej. NJnegro" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="txtMarca" class="mt-2">Marca: <sup style="color: red">*</sup> </label><br>
+                                    <input id="txtMarca" type="text"  class="mt-2 form-control" placeholder="ej. Cafsen" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="txtDim" class="mt-2">Dimensiones: <sup style="color: red">*</sup> </label>
+                                    <input id="txtDim" maxlength="7" type="text" onkeydown="moduloArmazon.soloDimensiones(event);" class="mt-2 form-control" placeholder="ej. 15X15" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="txtExis" class="mt-2">Existencias: <sup style="color: red">*</sup> </label>
+                                    <input id="txtExis" type="text" maxlength="7" onkeydown="moduloArmazon.soloNumeros(event);" class="mt-2 form-control" required placeholder="ej. 40">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="txtPreCom" class="mt-2">Precio de compra:  <sup style="color: red">*</sup> </label>
+                                    <input id="txtPreCom" type="text" maxlength="7" onkeydown="moduloArmazon.soloNumeros(event);" class="mt-2 form-control" required placeholder="ej. $800">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="txtPreV" class="mt-2">Precio de venta: <sup style="color: red">*</sup> </label>
+                                    <input id="txtPreV" type="text" maxlength="7" onkeydown="moduloArmazon.soloNumeros(event);" class="mt-2 form-control" required placeholder="ej. $1000">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-flex justify-content-around mt-2">
+                                <button class="mt-2 btn btn-lg" onclick="moduloArmazon.save();" id="btnAdd" title="Guardar" style="background: #011866"><img src="resources/g.png" style="height: 25px; width: 25px;" alt=""/></button>
+                                <button class="mt-2 btn btn-lg" onclick="moduloArmazon.clean();" id="btnClean" title="Limpiar formulario" style="background: #011866"><img src="resources/a.png" style="height: 35px; width: 25px;" alt=""/></button>
+                                <button class="mt-2 btn btn-lg disabled" onclick="moduloArmazon.askDelete();" id="btnDelete" title="Eliminar" style="background: #011866"><img src="resources/d.png" style="height: 25px; width: 25px;" alt=""/></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="divTbl" class="card col-lg-12 p-1 m-2" style="margin-bottom: 10px; overflow: auto">
+            <div class="d-flex m-3">
+                <label for="txtBusquedaCompra" class="form-label mx-3">Buscar armazón: </label>
+                <input type="text" id="txtBusquedaCompra" placeholder="Buscar" class="form-control" style="min-width: 200px">
+                <button class="btn mx-2 disabled" style="background: #011866"><img src="resources/b.png" style="height: 25px; width: 25px;"/></button>
+                <select name="cmbFiltro" class="form-control" style="width: 200px" id="cmbFiltro" onclick="moduloArmazon.refrescarTabla();">
+                    <option value="1">Activo</option>
+                    <option value="0">Inactivo</option>
+                </select>
+                <div style="padding-left: 310px;" class="">
+                    <button class="btn mx-4" onclick="moduloArmazon.imprimir('tabla')" style="background: #011866"><img src="resources/i.png" style="height: 25px; width: 25px;" alt=""/></button>
+                </div>
+            </div>
+            <div id="tabla">
+                <table class="table table-hover" id="tblArm">
+                    <thead class="table-dark" id="tb2">
+                        <tr>
+                            <th>Código de barras</th>
+                            <th>Nombre</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Detalles</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblArmazones">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

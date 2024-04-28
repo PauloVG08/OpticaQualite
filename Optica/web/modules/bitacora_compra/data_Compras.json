@@ -1,0 +1,22 @@
+[    
+    {
+        "claveUnica": "OQBC", 
+        "producto": "Mica", 
+        "fecha" : "Thu Jul 21 2022", 
+        "hora":"12:18:57",
+        "administrador" : "OQE", 
+        "precio" : "1300", 
+        "cantidad" : "14",
+        "estatus" : "Activo"
+    },
+    {
+        "claveUnica": "OQBC", 
+        "producto": "Armazon", 
+        "fecha" : "Thu Jul 21",
+        "hora":"12:18:57",
+        "administrador" : "OQE", 
+        "precio" : "1500", 
+        "cantidad" : "10",
+        "estatus" : "Activo"
+    }
+]

@@ -1,0 +1,43 @@
+[    
+    {
+        "nombre": "Lentecito", 
+        "marca": "Police", 
+        "color" : "Azul", 
+        "queratometria" : "834-FFF 8-FF", 
+        "fotografia" : "../../resources/Lente.jpg", 
+        "estatus" : "Activo"
+    },
+    {
+        "nombre": "Lentecito2", 
+        "marca": "Cyxus", 
+        "color" : "Cafe", 
+        "queratometria" : "378-EEE 10-EE", 
+        "fotografia" : "../../resources/Lente2.jpg", 
+        "estatus" : "Activo"
+    },
+    {
+        "nombre": "Lentecito3", 
+        "marca": "Polaroid", 
+        "color" : "Negro", 
+        "queratometria" : "271-JJJ 7-JJ", 
+        "fotografia" : "../../resources/Lente3.jpg", 
+        "estatus" : "Activo"
+    },
+    {
+        "nombre": "Lentecito4", 
+        "marca": "Tous", 
+        "color" : "Verde", 
+        "queratometria" : "271-JHG 9-JJ", 
+        "fotografia" : "../../resources/Lente1.jpg", 
+        "estatus" : "Activo"
+    },
+    {
+        "nombre": "Lentecito5", 
+        "marca": "Polaroid", 
+        "color" : "Gris", 
+        "queratometria" : "271-JIJ 9-MJ", 
+        "fotografia" : "../../resources/Lente4.jpg", 
+        "estatus" : "Activo"
+    }
+
+]

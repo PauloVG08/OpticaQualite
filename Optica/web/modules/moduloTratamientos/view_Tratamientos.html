@@ -1,0 +1,77 @@
+<!-- Modulo de tratamientos-->
+
+<div class="container-fluid row d-flex justify-content-md-center" style="margin-top: 10px">
+    <div class="card col-lg-5 m-2 p-4">
+        <h2 class="text-center">Gestión de Tratamientos</h2>
+        <form class="row g-3 formulario" id="formulario">
+
+            
+            <div class="col-md-6">
+                <label for="txtNombre" class="mt-2">Nombre:</label> <br>
+                <input name="nombre" id="txtNombre" type="text" class="mt-2" placeholder="Espejado" pattern="^[A-Za-z]+$"
+                title="El formato debe coincidir con letras de la A a la Z" required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="txtPrecioC" class="mt-2">Precio de compra:</label><br>
+                <input id="txtPrecioC" type="number"  class="mt-2" placeholder="12.30" pattern="[0-9]+"
+                title="Solo puedes ingresar números" required>
+            </div>
+            
+            <div class="col-md-6">
+                <label for="txtPrecioV" class="mt-2">Precio de venta:</label><br>
+                <input id="txtPrecioV" type="number"  class="mt-2" placeholder="20.30" pattern="[0-9]+" title="Solo puedes ingresar números" required>
+            </div>
+            
+            <div class="col-md-6">
+                <label for="txtCantidad" class="mt-2">Cantidad:</label><br>
+                <input id="txtCantidad" type="number"  class="mt-2" placeholder="60" pattern="[0-9]+"
+                title="Solo puedes ingresar números" required>
+            </div>
+
+            <div class="d-flex justify-content-around mt-2"> 
+                <button class="mt-2 btn btn-lg" onclick="moduloTratamiento.addTratamiento();" id="btnAdd" style="background: #011866"><img src="resources/g.png" style="height: 25px; width: 25px;" alt=""/></button>
+                
+                <button class="mt-2 btn btn-lg disabled" onclick="moduloTratamiento.updateTratamiento();" id="btnUpdate" style="background: #011866"><img src="resources/a.png" style="height: 25px; width: 25px;" alt=""/></button>
+                <button class="mt-2 btn btn-lg disabled" onclick="moduloTratamiento.deleteTratamiento();" id="btnDelete" style="background: #011866"><img src="resources/d.png" style="height: 25px; width: 25px;" alt=""/></button>
+            </div>
+        
+        </form> 
+
+        
+    </div>
+
+    <div class="card col-lg-6  p-4 m-2" style="margin-bottom: 10px">
+        <div class="d-flex m-3">
+            <label for="txtBusquedaTratamiento" class="form-label mx-3">Buscar Tratamiento: </label>
+            <input type="text" id="txtBusquedaTratamiento">
+            <button class="btn mx-2" onclick="moduloTratamiento.searchTratamiento();" style="background: #011866"><img src="resources/b.png" style="height: 25px; width: 25px;" alt=""/></button>
+            <select name="estado" id="estado" onclick="moduloTratamiento.loadTabla1();">
+                <option value="1"> Activo </option>
+                <option value="0"> Inactivo </option>
+            </select>
+            <div style="padding-left: 110px;">
+                <button class="btn mx-2" onclick="moduloTratamiento.imprimir('tabla')" style="background: #011866"><img src="resources/i.png" style="height: 25px; width: 30px;" alt=""/></button>
+            </div>
+        </div>
+
+        <div id="tabla">
+        <table class="table table-hover">
+            <thead class="table-dark" id="tb2">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio compra</th>
+                    <th>Precio venta</th>
+                    <th>Existencias</th>
+                    <th>Estátus</th>
+                </tr>
+            </thead>
+            <tbody id="tblTratamientos">
+
+            </tbody>
+        </table>
+    </div>
+        
+    </div>
+</div>
+

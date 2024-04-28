@@ -1,0 +1,43 @@
+[    
+    {
+        "nombre": "Sujetador (ganchos)", 
+        "marca": "Solunate", 
+        "precioC" : "20", 
+        "precioV" : "25", 
+        "cantidad" : "80", 
+        "estatus": "Activo"
+    },
+    {
+        "nombre": "Estuche Negro", 
+        "marca": "Qualite", 
+        "precioC" : "25", 
+        "precioV" : "30", 
+        "cantidad" : "10", 
+        "estatus": "Activo"
+    },
+    {
+        "nombre": "Correa para lentes", 
+        "marca": "Horien", 
+        "precioC" : "15", 
+        "precioV" : "20", 
+        "cantidad" : "50", 
+        "estatus": "Activo"
+    },
+    {
+        "nombre": "Paño microfibra", 
+        "marca": "OptiFresh", 
+        "precioC" : "10", 
+        "precioV" : "15", 
+        "cantidad" : "50", 
+        "estatus": "Activo"
+    },
+    {
+        "nombre": "Sprite", 
+        "marca": "Multi-Purpose", 
+        "precioC" : "20", 
+        "precioV" : "35", 
+        "cantidad" : "100", 
+        "estatus": "Activo"
+    }
+
+]

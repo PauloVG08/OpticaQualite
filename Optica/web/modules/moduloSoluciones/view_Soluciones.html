@@ -1,0 +1,101 @@
+<!-- Modulo de Soluciones -->
+<div class="container-fluid row d-flex justify-content-md-center" style="margin-top: 10px">
+    <div class="accordion" id="acordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button id="btnAccordion" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Añadir Solución de Limpieza
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-expanded="false" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="card col-lg-12 m-2 p-4">
+                        <h2 class="text-center">Soluciones de limpieza</h2>
+                        <div class="row g-3">
+                            <!--//ids-->
+                            <div class="row g-3 p-2">
+                                <div class="col-md-4 form-floating d-none">
+                                    <input id="txtIdProducto" class="form-control mt-2" type="text" readonly>
+                                    <label for="txtIdProducto" class="mt-2 ">Id producto</label>
+                                </div>
+                                <div class="col-md-4 form-floating d-none">
+                                    <input id="txtIdSolucion" class="form-control mt-2" type="text" readonly>
+                                    <label for="txtSolucion" class="mt-2 ">Id Solución</label>
+                                </div>
+                                <div class="col-md-4">
+                                </div>
+                                <div class="col-md-4 form-floating">
+                                    <input id="txtCodigoBarras" class="form-control mt-2" type="text" readonly>
+                                    <label for="txtCodigoBarras" class="mt-2 ">Código de barras</label>
+                                </div>
+                            </div>
+
+                            <!--                            //solución-->
+                            <div class="row g-3 p-2">
+                                <div class="col-md-3">
+                                    <label for="txtNombre" class="mt-2">Nombre: <sup style="color: red">*</sup> </label><br>
+                                    <input id="txtNombre" onkeydown="moduloSoluciones.soloLetras(event);" type="text"  class="mt-2 form-control" placeholder="ej. Toallita para lentes" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="txtMarca" class="mt-2">Marca: <sup style="color: red">*</sup> </label>
+                                    <input id="txtMarca" type="text"  class="mt-2 form-control" placeholder="ej. Olive" required>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="txtPrecioCompra" class="mt-2">Precio compra: <sup style="color: red">*</sup> </label>
+                                    <input id="txtPrecioCompra" onkeydown="moduloSoluciones.soloNumeros(event);" maxlength="7" type="text"  class="mt-2 form-control" placeholder="ej. $1000" required>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="txtPrecioVenta" class="mt-2">Precio venta: <sup style="color: red">*</sup> </label>
+                                    <input id="txtPrecioVenta" onkeydown="moduloSoluciones.soloNumeros(event);" maxlength="7" type="text"  class="mt-2 form-control" placeholder="ej. $1200" required>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="txtExistencias" class="mt-2">Existencias: <sup style="color: red">*</sup> </label>
+                                    <input id="txtExistencias" onkeydown="moduloSoluciones.soloNumeros(event);" maxlength="7" type="text"  class="mt-2 form-control" placeholder="ej. 30" required>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-flex justify-content-around mt-2">
+                                <button class="mt-2 btn btn-lg" onclick="moduloSoluciones.save();" id="btnAdd" title="Guardar" style="background: #011866"><img src="resources/g.png" style="height: 25px; width: 25px;" alt=""/></button>
+                                <button class="mt-2 btn btn-lg" onclick="moduloSoluciones.clean();" id="btnClean" title="Limpiar formulario" style="background: #011866"><img src="resources/a.png" style="height: 35px; width: 25px;" alt=""/></button>
+                                <button class="mt-2 btn btn-lg disabled" onclick="moduloSoluciones.askDelete();" id="btnDelete" title="Eliminar" style="background: #011866"><img src="resources/d.png" style="height: 25px; width: 25px;" alt=""/></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="divTbl" class="card col-lg-12  p-1 m-2" style="margin-bottom: 10px; overflow: auto">
+            <div class="d-flex m-3">
+                <label for="txtBusquedaCompra" class="form-label mx-3">Buscar solución: </label>
+                <input type="text" id="txtBusquedaCompra" placeholder="Buscar" class="form-control" style="min-width: 200px">
+                <button class="btn mx-2 disabled" style="background: #011866"><img src="resources/b.png" style="height: 25px; width: 25px;"/></button>
+                <select name="cmbFiltroSolucion" class="form-control" style="width: 200px" id="cmbFiltroSolucion" onclick="moduloSoluciones.refrescarTabla();">
+                    <option value="1">Activo</option>
+                    <option value="0">Inactivo</option>
+                </select>
+                <div style="padding-left: 310px;">
+                    <button class="btn mx-4" onclick="moduloSoluciones.imprimir('tabla')" style="background: #011866"><img src="resources/i.png" style="height: 25px; width: 25px;" alt=""/></button>
+                </div>
+            </div>
+            <div id="tabla">
+                <table class="table table-hover" id="tblSol">
+                    <thead class="table-dark" id="tb2">
+                        <tr>
+                            <th>Código de barras</th>
+                            <th>Nombre</th>
+                            <th>Marca</th>
+                            <th>Precio venta</th>
+                            <th>Detalles</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblSoluciones">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,128 @@
+<!-- Modulo de compras -->
+<div class="container-fluid row d-flex justify-content-md-center" style="margin-top: 10px">
+    <div class="accordion" id="acordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button id="btnAccordion" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Añadir lente de contacto
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-expanded="false" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="card col-lg-12 m-2 p-4">
+                        <h2 class="text-center">Lentes de contacto</h2>
+                        <div class="row g-3">
+                            <!--//ids-->
+                            <div class="row g-3 p-2">
+                                <div class="col-md-4 form-floating d-none">
+                                    <input id="txtIdProducto" class="form-control mt-2" type="text" readonly>
+                                    <label for="txtIdProducto" class="mt-2 ">Id producto</label>
+                                </div>
+                                <div class="col-md-4 form-floating d-none">
+                                    <input id="txtIdLenteContacto" class="form-control mt-2" type="text" readonly>
+                                    <label for="txtIdLenteContacto" class="mt-2 ">Id lente de contacto</label>
+                                </div>
+                                <div class="col-md-4">
+                                </div>
+                                <div class="col-md-4 form-floating">
+                                    <input id="txtCodigoBarras" class="form-control mt-2" type="text" readonly>
+                                    <label for="txtCodigoBarras" class="mt-2 ">Código de barras</label>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row g-3 p-2 col-md-4">
+                                <!-- foto -->
+                                <div class="col-md-5">
+                                    <div class="row mt-2">
+                                        <div class="col-12">
+                                            <img id="imgFoto" src="resources/cargarFoto.png" style="width: 257px; height: 257px;"/>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2" >
+                                        <div class="col-12">
+                                            <button id="btnSelecImg" class="btn btn-outline-primary" style="width: 256px;"  onclick="moduloLentesContacto.showInputDialog()"><img src="resources/subir.png" alt="" style="height: 24px"/> Imagen</button>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2 d-none">
+                                        <div class="col-12">
+                                            <input id="inputFileImagenArmazon" type="file" style="width: 257px;" class="mt-2 form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!--//Lentes de contacto-->
+                            <div class="row g-3 p-2 col-md-8">
+                                <div class="col-md-4">
+                                    <label for="txtNombre" class="mt-2">Nombre: <sup style="color: red">*</sup> </label><br>
+                                    <input id="txtNombre" onkeydown="moduloLentesContacto.soloLetras(event);" type="text"  class="mt-2 form-control" placeholder="ej. Lente contacto hibrido" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="txtMarca" class="mt-2">Marca: <sup style="color: red">*</sup> </label>
+                                    <input id="txtMarca" type="text" onkeydown="moduloLentesContacto.soloMarcas(event);"  class="mt-2 form-control" placeholder="ej. Gucci" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="txtPrecioCompra" class="mt-2">Precio compra: <sup style="color: red">*</sup> </label>
+                                    <input id="txtPrecioCompra" maxlength="7" onkeydown="moduloLentesContacto.soloNumeros(event);" type="text"  class="mt-2 form-control" placeholder="ej. $1000" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="txtPrecioVenta" class="mt-2">Precio venta: <sup style="color: red">*</sup> </label>
+                                    <input id="txtPrecioVenta" maxlength="7" onkeydown="moduloLentesContacto.soloNumeros(event);" type="text"  class="mt-2 form-control" placeholder="ej. $1200" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="txtExistencias" class="mt-2">Existencias: <sup style="color: red">*</sup> </label>
+                                    <input id="txtExistencias" maxlength="7" onkeydown="moduloLentesContacto.soloNumeros(event);" type="text"  class="mt-2 form-control" placeholder="ej. 30" required>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="txtQuera" class="mt-2">Queratometria: <sup style="color: red">*</sup> </label>
+                                    <input id="txtQuera" maxlength="7" onkeydown="moduloLentesContacto.soloNumeros(event);" type="text"  class="mt-2 form-control" placeholder="ej. 15">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-flex justify-content-around mt-2">
+                                <button class="mt-2 btn btn-lg" onclick="moduloLentesContacto.save();" id="btnAdd" title="Guardar" style="background: #011866"><img src="resources/g.png" style="height: 25px; width: 25px;" alt=""/></button>
+                                <button class="mt-2 btn btn-lg" onclick="moduloLentesContacto.clean();" id="btnClean" title="Limpiar formulario" style="background: #011866"><img src="resources/a.png" style="height: 35px; width: 25px;" alt=""/></button>
+                                <button class="mt-2 btn btn-lg disabled" onclick="moduloLentesContacto.askDelete();" id="btnDelete" title="Eliminar" style="background: #011866"><img src="resources/d.png" style="height: 25px; width: 25px;" alt=""/></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="divTbl" class="card col-lg-12 p-1 m-2" style="margin-bottom: 10px; overflow: auto">
+            <div class="d-flex m-3">
+                <label for="txtBusquedaCompra" class="form-label mx-3">Buscar lente: </label>
+                <input type="text" id="txtBusquedaCompra" placeholder="Buscar" class="form-control" style="min-width: 200px">
+                <button class="btn mx-2 disabled" style="background: #011866"><img src="resources/b.png" style="height: 25px; width: 25px;"/></button>
+                <select name="cmbFiltro" class="form-control" style="width: 200px" id="cmbFiltro" onclick="moduloLentesContacto.refrescarTabla();">
+                    <option value="1">Activo</option>
+                    <option value="0">Inactivo</option>
+                </select>
+                <div style="padding-left: 310px;" class="">
+                    <button class="btn mx-4" onclick="moduloLentesContacto.imprimir('tabla')" style="background: #011866"><img src="resources/i.png" style="height: 25px; width: 25px;" alt=""/></button>
+                </div>
+            </div>
+            <div id="tabla">
+                <table class="table table-hover" id="tblLC">
+                    <thead class="table-dark" id="tb2">
+                        <tr>
+                            <th>Código de barras</th>
+                            <th>Nombre</th>
+                            <th>Marca</th>
+                            <th>Precio venta</th>
+                            <th>Detalles</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblLentesContacto">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

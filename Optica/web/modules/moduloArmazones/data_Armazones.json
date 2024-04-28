@@ -1,0 +1,72 @@
+[    
+    {
+        "codigoBarras" : "OQ1",
+        "nombre": "Circular", 
+        "marca": "Cyxus", 
+        "modelo" : "HAJS130", 
+        "color":"Negro",
+        "descripcion" : " negros", 
+        "fotografia" : "Defaul.jpg", 
+        "dimensiones" : "10x10",
+        "precioC" : "900",
+        "precioV" : "1500",
+        "existencias" : "15",
+        "estatus" : "Activo"
+    },
+    {
+        "codigoBarras" : "OQ2",
+        "nombre": "Corazon", 
+        "marca": " Ray-Ban", 
+        "modelo" : "JH301K0", 
+        "color":"Negro",
+        "descripcion" : " negros", 
+        "fotografia" : "Defaul1.jpg", 
+        "dimensiones" : "10x10",
+        "precioC" : "1000",
+        "precioV" : "2500",
+        "existencias" : "15",
+        "estatus" : "Activo"
+    },
+    {
+        "codigoBarras" : "OQ3",
+        "nombre": "Cuadrado", 
+        "marca": "Oakley", 
+        "modelo" : "KSA1345", 
+        "color":"Cafe",
+        "descripcion" : "Cafe oscuro", 
+        "fotografia" : "Defaul4.jpg", 
+        "dimensiones" : "10x10",
+        "precioC" : "2500",
+        "precioV" : "3500",
+        "existencias" : "7",
+        "estatus" : "Activo"
+    },
+    {
+        "codigoBarras" : "OQ4",
+        "nombre": "Ovalo", 
+        "marca": "Polaroid", 
+        "modelo" : "AQP014J", 
+        "color":"Rojo",
+        "descripcion" : "Rojo sangre", 
+        "fotografia" : "Defaul3.jpg", 
+        "dimensiones" : "10x10",
+        "precioC" : "1500",
+        "precioV" : "3000",
+        "existencias" : "25",
+        "estatus" : "Activo"
+    },
+    {
+        "codigoBarras" : "OQ5",
+        "nombre": "Penta", 
+        "marca": "Cyxus", 
+        "modelo" : "MZ982KJ", 
+        "color":"Azul",
+        "descripcion" : "Azul oscuro", 
+        "fotografia" : "Defaul2.jpg", 
+        "dimensiones" : "10x10",
+        "precioC" : "2000",
+        "precioV" : "3500",
+        "existencias" : "30",
+        "estatus" : "Activo"
+    }
+]

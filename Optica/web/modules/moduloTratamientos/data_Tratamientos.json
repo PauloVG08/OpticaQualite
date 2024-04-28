@@ -1,0 +1,38 @@
+[    
+    {
+        "nombre": "Antireflejante", 
+        "precioC" : "80", 
+        "precioV" : "100", 
+        "cantidad" : "50", 
+        "estatus": "Activo"
+    },
+    {
+        "nombre": "CleanCoat", 
+        "precioC" : "150", 
+        "precioV" : "200", 
+        "cantidad" : "50", 
+        "estatus": "Activo"
+    },
+    {
+        "nombre": "Bifocal", 
+        "precioC" : "170", 
+        "precioV" : "210", 
+        "cantidad" : "50", 
+        "estatus": "Activo"
+    },
+    {
+        "nombre": "Fotocromatico", 
+        "precioC" : "200", 
+        "precioV" : "250", 
+        "cantidad" : "50", 
+        "estatus": "Activo"
+    },
+    {
+        "nombre": "Polarizado", 
+        "precioC" : "230.59", 
+        "precioV" : "280", 
+        "cantidad" : "5", 
+        "estatus": "Activo"
+    }
+
+]

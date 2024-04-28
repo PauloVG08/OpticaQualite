@@ -1,0 +1,56 @@
+#logo{
+    width: 70px; 
+    height: 30px;
+    margin-right: 4px;
+}
+.nav{
+    background: #112A45;
+    font-size: 18px;
+    font-family: comic sans MS;
+}
+
+.nav a{
+    color: white;
+}
+
+.nav a:hover{    
+    color: #B8FFF9;
+    background: rgba(184, 184, 179,.3);
+    border-bottom: 3px solid #B8FFF9;   
+    padding-bottom: 0; 
+}
+
+#pie{
+    background-color: #112a45; 
+    width: 100%;
+    left:0px;
+    bottom:0px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+input[type=number] { -moz-appearance:textfield; }
+
+.centrar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-oq-color{
+    background: #112A45;
+    color: white;
+}
+
+.bg-oq-color:hover{
+    background: #256192;
+    color: white;
+}
+
+.abs-center {
+
+}
